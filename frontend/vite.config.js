@@ -11,10 +11,10 @@ export default defineConfig({
       '@locales': path.resolve(__dirname, '../locales')
     }
   },
-  server: {
+server: {
     port: 3000,
     open: false, 
-    allowedHosts: ['uptime-ai-swarm.3iaeor.easypanel.host'], 
+    allowedHosts: 'all',   // ← reemplaza toda la línea de allowedHosts
     host: '0.0.0.0', 
     proxy: {
       '/api': {
@@ -24,4 +24,3 @@ export default defineConfig({
       }
     }
   }
-})
