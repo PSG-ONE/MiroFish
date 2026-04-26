@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
   resolve: {
@@ -11,11 +10,11 @@ export default defineConfig({
       '@locales': path.resolve(__dirname, '../locales')
     }
   },
-server: {
+  server: {
     port: 3000,
-    open: false, 
-    allowedHosts: 'all',   // ← reemplaza toda la línea de allowedHosts
-    host: '0.0.0.0', 
+    open: false,
+    allowedHosts: 'all',
+    host: '0.0.0.0',
     proxy: {
       '/api': {
         target: 'http://localhost:5001',
@@ -24,3 +23,4 @@ server: {
       }
     }
   }
+})
